@@ -9,12 +9,13 @@ const rememberSessionMW = require("./src/middlewares/rememberSessionMW")
 const cookies = require('cookie-parser');
 const cors = require("cors"); */
 
+const mainRouter = require("./src/routers/mainRouter");
 const app = express()
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", (req,res) => {
-    res.send("https://www.npmjs.com/package/sneaks-api")
-})
 
 app.listen("3000", () =>{
     console.log("Todo sobre ruedas")
 })
+
+app.use("/", mainRouter);
