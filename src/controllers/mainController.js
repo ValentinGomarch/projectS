@@ -1,4 +1,5 @@
 const path = require("path");
+const userController = require("./userController")
 
 const mainController = {
   index: (req, res) => {
@@ -12,7 +13,7 @@ const mainController = {
   login: (req,res) =>{
     res.sendFile(path.join(__dirname, "../views/login.html"))
   },
-
+  userController: userController
 };
 
 
